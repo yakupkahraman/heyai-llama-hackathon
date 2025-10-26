@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: always
+    # İlk çalıştırmada llama3:8b modelini indir
+    entrypoint: /bin/sh -c "ollama serve & sleep 5 && ollama pull llama3:8b && wait"
+
+  fastapi:
+    build:
+      context: ./fastapi
+      dockerfile: Dockerfile
+    container_name: fastapi
+    depends_on:
+      - ollama
+    ports:
+      - "8000:8000"
+    environment:
+      OLLAMA_URL: "http://ollama:11434"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./fastapi:/app
+    restart: always
+
+volumes:
+  ollama_data:
+

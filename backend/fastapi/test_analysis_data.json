@@ -1,0 +1,17 @@
+{
+	"user_info": {
+		"age_group": "14-17",
+		"hard_area": "Hece tanıma ve ses-harf eşleştirme zorluğu",
+		"reading_goal": "Takılmadan kelime okuma ve hece ayırma becerisi kazanma",
+		"diagnosis_time": "6 ay önce fonolojik disleksi tanısı aldı",
+		"motivating_games": "Kelime oyunları, ses eşleştirme, hızlı tanıma oyunları",
+		"working_with_professional": "Özel eğitim uzmanı ile haftada 2 saat çalışıyor"
+	},
+	"user_statistics": {
+		"total_games_played": 45,
+		"phonological_success_rate": "72.5",
+		"spelling_success_rate": "68.0",
+		"word_list_success_rate": "85.2",
+		"paragraph_success_rate": "79.8"
+	}
+}
